@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>零股計算器</title>
+  <style>
+    .container {
+      max-width: 600px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+
+    label, input {
+      display: block;
+      margin-bottom: 20px;
+    }
+
+    button {
+      display: block;
+    }
+
+    #result {
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>零股計算器</h1>
+    <form id="stock-form">
+      <label for="stock-price">股票價格</label>
+      <input type="number" id="stock-price" step="0.01" min="0" required>
+
+      <label for="investment-amount">投資金額</label>
+      <input type="number" id="investment-amount" step="0.01" min="0" required>
+
+      <button type="submit">計算零股數量</button>
+    </form>
+    <div id="result"></div>
+  </div>
+  <script>
+    document.getElementById("stock-form").addEventListener("submit", function(event) {
+      event.preventDefault();
+
+      const stockPrice = parseFloat(document.getElementById("stock-price").value);
+      const investmentAmount = parseFloat(document.getElementById("investment-amount").value);
+
+      const fractionalShares = investmentAmount / stockPrice;
+
+      document.getElementById("result").innerText = `根據您輸入的資料，您可以購買 ${fractionalShares.toFixed(2)} 份零股。`;
+    });
+  </script>
+</body>
+</html>
