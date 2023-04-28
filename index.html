@@ -5,24 +5,62 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>零股計算器</title>
   <style>
-    .container {
-      max-width: 600px;
-      margin: 0 auto;
-      padding: 20px;
-    }
+    body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
 
-    label, input {
-      display: block;
-      margin-bottom: 20px;
-    }
+.container {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+}
 
-    button {
-      display: block;
-    }
+label, input {
+  display: block;
+  margin-bottom: 20px;
+}
 
-    #result {
-      margin-top: 20px;
-    }
+button {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  background-color: #007bff;
+  border: none;
+  border-radius: 3px;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+button:disabled {
+  background-color: #cccccc;
+  cursor: not-allowed;
+}
+
+#result {
+  margin-top: 20px;
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding: 15px;
+  }
+
+  input {
+    font-size: 16px;
+  }
+
+  button {
+    font-size: 14px;
+  }
+}
+
   </style>
 </head>
 <body>
